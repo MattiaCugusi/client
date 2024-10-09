@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws UnknownHostException, IOException {
@@ -16,11 +17,17 @@ public class Main {
         BufferedReader in = new BufferedReader(new InputStreamReader(mySocket.getInputStream()));
         DataOutputStream out = new DataOutputStream(mySocket.getOutputStream());
         
-        out.writeBytes("prova collegamento \n");
+        Scanner sc = new Scanner(System.in);
+        String stringaRicevuta;
 
-        String stringaRicevuta = in.readLine();
+        do{
 
+        String input = sc.nextLine();
+        out.writeBytes(input + "\n");
+        stringaRicevuta = in.readLine();
         System.out.println(stringaRicevuta);
+
+        }while(stringaRicevuta.equals("!"));
 
         mySocket.close();
 

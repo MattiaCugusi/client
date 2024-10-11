@@ -22,12 +22,13 @@ public class Main {
 
         do{
 
+        System.out.println("inserire riga:");
         String input = sc.nextLine();
         out.writeBytes(input + "\n");
         stringaRicevuta = in.readLine();
         System.out.println(stringaRicevuta);
 
-        }while(stringaRicevuta.equals("!"));
+        }while(!stringaRicevuta.equals("!"));
 
         mySocket.close();
 

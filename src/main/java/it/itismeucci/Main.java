@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws UnknownHostException, IOException {
         System.out.println("Il client e' partito");
-        Socket mySocket = new Socket("localhost", 5673);
+        Socket mySocket = new Socket("localhost", 5672);
         System.out.println("il client si e' collegato");
         
         BufferedReader in = new BufferedReader(new InputStreamReader(mySocket.getInputStream()));
